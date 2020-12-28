@@ -1,0 +1,1 @@
+quick script to replace StickyKeys
