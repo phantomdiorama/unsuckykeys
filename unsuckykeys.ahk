@@ -1,28 +1,31 @@
-﻿#NoEnv
-; #Warn
-SendMode Input
-SetWorkingDir %A_ScriptDir% 
+﻿#Requires AutoHotkey v2.0
+#SingleInstance Force
+if FileExist("icon.ico")
+    TraySetIcon  "icon.ico"
 
-Control::
-Input, UserInput, L1 T3
-if (ErrorLevel = "Max")
-    {
-    Send, ^%UserInput%
-    }
-return 
-
-Shift::
-Input, UserInput, L1 T3
-if (ErrorLevel = "Max")
-    {
-    Send, +%UserInput%
-    }
-return 
-
-Alt::
-Input, UserInput, L1 T3
-if (ErrorLevel = "Max")
-    {
-    Send, !%UserInput%
-    }
-return 
+alt::
+control::
+shift::
+{
+    ih := InputHook("L1 T2")
+    ih.Start()
+    ih.Wait()
+    if (ih.EndReason = "Max")
+        if (A_ThisHotkey = "control"){
+            key := ih.Input
+            sht := "^" . key
+            send sht
+        }
+        else if (A_ThisHotkey = "alt"){
+            key := ih.Input
+            sht := "!" . key
+            send sht
+        }
+        else {
+            key := ih.Input
+            sht := "+" . key
+            send sht
+        }
+    if (ih.EndReason = "Timeout")
+        return
+}
