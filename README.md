@@ -1,3 +1,4 @@
 # unsuckykeys
 
-Microsoft’s StickyKeys kinda sucks. This kinda sucks less.
+Microsoft’s [StickyKeys](https://en.wikipedia.org/wiki/Sticky_keys) kinda
+sucks. This kinda sucks less.
