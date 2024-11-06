@@ -7,6 +7,6 @@ bad. This is less bad.
 
 Install [AutoHotkey](https://www.autohotkey.com/) then run `unsuckykeys.ahk`
 
-## notes
+## alternative
 
 Linux users should try [keyd](https://github.com/rvaiya/keyd).
